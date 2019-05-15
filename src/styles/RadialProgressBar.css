@@ -1,9 +1,15 @@
 .radial-progress-bar {
   height: 165px;
   width: 165px;
+
 }
 
 .radial-progress-bar .progress-group {
+
+  -ms-transform-origin: center;/* IE 9 */
+  -ms-transform: rotate(135deg);/* IE 9 */
+  -webkit-transform-origin: center;/*safari*/
+  -webkit-transform: rotate(135deg);/*safari*/
   transform-origin: center;
   transform: rotate(135deg);
 }
@@ -16,13 +22,20 @@
 .radial-progress-bar .progress {
   fill: var(--color-yellow);
   stroke: none;
+
 }
 
 .radial-progress-bar .value {
-  text-anchor: middle;
+  
+ text-anchor: middle;
+ -ms-transform: rotate(-135deg); /* IE 9 */
+ -ms-transform-origin: center; /* IE 9 */
 
-  transform-origin: center;
+ -webkit-transform:rotate(-135deg);/*safari*/
+ -webkit-transform-origin: center;/*safari*/
+
   transform: rotate(-135deg);
+  transform-origin: center;
 
   fill: var(--color-text);
   font-weight: bold;
