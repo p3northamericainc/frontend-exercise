@@ -2,11 +2,14 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-
   background: var(--color-bg);
   padding: 50px 100px;
-
+  
   box-shadow: 0 3px 3px var(--color-shadow);
+
+  /* for fixed header*/
+  flex: 0 0 auto;
+
 }
 
 .header .logo-container {

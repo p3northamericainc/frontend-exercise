@@ -8,6 +8,10 @@
 .app .page {
   flex: 1;
 
+/* for fixed header */
+  display: flex;
+  flex-direction: column;
+
   /* Scrollable content */
   overflow-y: auto;
   /* Moving page towards the right to account for fixed sidebar */
