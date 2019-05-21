@@ -2,6 +2,12 @@ import Card from "./Card";
 import RadialProgessBar from "./RadialProgressBar";
 import "styles/RangeCard.css";
 
+/* Modified by: Hima Patel
+Change Date: 05/20/2019
+Reason of Modificatio: Add tooltip on help button hover, 
+                        add remove button, 
+                        add remove functionality on remove datacard button */
+
 /**
  * Displays range data
  */
@@ -19,7 +25,7 @@ export default class RangeCard {
    * @return {HTMLElement}
    */
   getElement() {
-    const { title, value, upperRange } = this._data;
+    const { title, value, upperRange, description } = this._data;
     const children = [];
 
     const titleElement = document.createElement("h4");
@@ -38,17 +44,37 @@ export default class RangeCard {
     children.push(valueElement);
     children.push(outOfElement);
 
+    //remove button
+    const removeButton = document.createElement("button");
+    removeButton.className = "remove-button";
+    var self = this;
+    removeButton.addEventListener("click", function() {  
+      self.remove(this);
+    }, false);
+    const removeIcon = document.createElement("i");
+    removeIcon.className = "fas fa-times-circle";
+    removeButton.appendChild(removeIcon);
+    children.push(removeButton);
+
     // Help button
     const helpButton = document.createElement("button");
-    helpButton.className = "help-button";
+    helpButton.className = "tooltip help-button";
     const helpIcon = document.createElement("i");
     helpIcon.className = "fas fa-question-circle";
+    const helpDescription = document.createElement("span");
+    helpDescription.innerText = description;
+    helpDescription.className = "tooltiptext";
     helpButton.appendChild(helpIcon);
+    helpButton.appendChild(helpDescription);
     children.push(helpButton);
 
     const card = new Card(children).getElement();
     card.className += " range-card";
 
     return card;
+  }
+
+  remove(elem) {
+    elem.parentElement.parentElement.removeChild(elem.parentElement);
   }
 }

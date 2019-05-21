@@ -4,17 +4,9 @@
   align-items: center;
 
   background: var(--color-bg);
-  padding: 50px 100px;
+  padding: 0 100px;
 
   box-shadow: 0 3px 3px var(--color-shadow);
-}
-
-.header .logo-container {
-  height: 134px;
-  width: 134px;
-  background: url("../assets/logo.png");
-
-  margin-right: 32px;
 }
 
 .header h1 {

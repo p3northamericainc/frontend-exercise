@@ -1,6 +1,10 @@
 import IconButton from "./IconButton";
 import "styles/ExportButtons.css";
 
+/* Modified by: Hima Patel
+Change Date: 05/20/2019
+Reason of Modificatio: Remove export title */
+
 /**
  * Contains buttons to export data in multiple formats
  */
@@ -19,10 +23,6 @@ export default class ExportButtons {
   getElement() {
     this._container.className = "export-buttons";
 
-    const title = document.createElement("h2");
-    title.className = "export-buttons-title";
-    title.innerText = "Export";
-
     const pdfButton = new IconButton("file-pdf");
     const excelButton = new IconButton("file-excel");
     const csvButton = new IconButton("file-csv");
@@ -33,7 +33,6 @@ export default class ExportButtons {
     buttonContainer.appendChild(excelButton.getElement());
     buttonContainer.appendChild(csvButton.getElement());
 
-    this._container.append(title);
     this._container.append(buttonContainer);
 
     return this._container;

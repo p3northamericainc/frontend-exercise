@@ -1,9 +1,8 @@
 .range-card {
   position: relative;
-
-  height: 320px;
-  width: 320px;
-
+  float: left;
+  height: 280px;
+  width: 280px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -14,8 +13,56 @@
   position: absolute;
   bottom: 10px;
   right: 10px;
-
   background: transparent;
   border: none;
   color: inherit;
+}
+
+.range-card .remove-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: inherit;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: -75%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+  
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }

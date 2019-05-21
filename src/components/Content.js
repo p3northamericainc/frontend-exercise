@@ -3,6 +3,12 @@ import RangeCard from "./RangeCard";
 import PercentageCard from "./PercentageCard";
 import AddRangeCard from "./AddRangeCard";
 import PieChartCard from "./PieChartCard";
+import BarGraphCard from "./BarGraphCard";
+import Popup from "./PopUp";
+
+/* Modified by: Hima Patel
+Change Date: 05/20/2019
+Reason of Modificatio: To accomodate bar graph content at the bottom*/
 
 /**
  * Contains all of the data content
@@ -17,7 +23,8 @@ export default class Content {
       {
         title: "Unique Customers",
         value: 300,
-        upperRange: 450
+        upperRange: 450,
+        description: "Total number of unique customers till date."
       }
     ];
   }
@@ -74,10 +81,30 @@ export default class Content {
     });
     storeColumn2.appendChild(perfectOrderRateCard.getElement());
 
+    /***************************
+     ***         Sale        ***
+     ***************************/
+    const saleTitle = document.createElement("h3");
+    saleTitle.innerText = "Sales";
+
+    const saleContainer = document.createElement("div");
+    saleContainer.className = "store-container";
+    const saleColumn1 = document.createElement("div");
+    saleColumn1.className = "store-column";
+
+    saleContainer.appendChild(saleColumn1);
+
+    const saleBarGraph = new BarGraphCard();
+    saleColumn1.appendChild(saleBarGraph.getElement());
+    const popup = new Popup();
+
     this._container.appendChild(customersTitle);
     this._container.appendChild(cardsContainer);
     this._container.appendChild(storeTitle);
     this._container.appendChild(storeContainer);
+    this._container.appendChild(saleTitle);
+    this._container.appendChild(saleContainer);
+    this._container.appendChild(popup.getElement());
 
     return this._container;
   }

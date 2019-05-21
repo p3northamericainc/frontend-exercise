@@ -1,6 +1,6 @@
 .add-range {
-  height: 314px;
-  width: 314px;
+  height: 275px;
+  width: 275px;
 
   display: flex;
   justify-content: center;
@@ -8,6 +8,7 @@
 
   border: 3px dashed var(--color-text);
   border-radius: 2px;
+  cursor: pointer;
 }
 
 .add-range .fa-plus-circle {

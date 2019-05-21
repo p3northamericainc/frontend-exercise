@@ -16,11 +16,13 @@
 }
 
 .content .range-card-container {
-  display: flex;
+  /* display: flex; */
+
 }
 
 .content .range-card-container > * {
-  margin-right: 5em;
+  margin-right: 2em;
+  margin-bottom: 2em;
 }
 
 .content .range-card-container > *:last-child {
