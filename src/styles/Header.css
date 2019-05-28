@@ -20,3 +20,13 @@
 .header h1 {
   flex-grow: 1;
 }
+
+@media only screen and (max-width: 768px) {
+  .header .logo-container {
+    margin-right: 0px;
+  }
+  .header {
+    padding: 0;
+  } 
+} 
+

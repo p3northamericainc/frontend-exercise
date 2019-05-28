@@ -14,3 +14,10 @@
   /* Using margin so that the all the content is pushed, not just relatively position elements */
   margin-left: 130px;
 }
+
+@media only screen and (max-width: 768px) {
+  .app .page {
+    margin-left: 0px;
+    margin: 1%;
+  }
+}

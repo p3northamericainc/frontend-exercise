@@ -26,3 +26,16 @@
 .content .range-card-container > *:last-child {
   margin-right: 0;
 }
+
+@media only screen and (max-width: 768px) {
+  .content {
+    padding: 0;
+  }
+  .content .store-container {
+    flex-direction: column;
+  } 
+  .content .range-card-container > * {
+    margin-right: 1em;
+  }
+} 
+

@@ -26,3 +26,14 @@
 .sidebar .icon-button:last-child {
   margin-top: auto;
 }
+
+@media only screen and (max-width: 768px) {
+  .sidebar {
+    position: inherit;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: 32px 16px;
+  }
+}
+

@@ -49,3 +49,10 @@
 .percentage-card:last-child .progress-bar .progress-value {
   background: var(--color-primary);
 }
+
+@media only screen and (max-width: 768px) {
+  .percentage-card {
+    padding: 20px;
+  }
+} 
+
